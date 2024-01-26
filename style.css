@@ -31,7 +31,6 @@ body {
   flex-wrap: wrap;
   overflow: hidden;
   transition: opacity 500ms;
- 
 }
 #indian-flag {
   width: 100vw;
@@ -85,7 +84,6 @@ body {
   }
 }
 
-
 .flag {
   max-width: 350px;
   width: 350px;
@@ -136,6 +134,14 @@ body {
   background-color: var(--blue);
 }
 
+.author {
+  position: absolute;
+  z-index: 9;
+  right: 10px;
+  bottom: 10px;
+  font-family: cursive;
+  font-size: 14px;
+}
 h1 {
   font-size: clamp(20px, 3vw, 2rem);
   font-weight: 600;
@@ -147,8 +153,6 @@ h1 {
     font-size: clamp(1rem, 6vw, 2rem);
   }
 }
-
-
 
 @media screen and (min-width: 601px) {
   h1 {
