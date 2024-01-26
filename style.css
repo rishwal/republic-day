@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+:root {
+  --saffron: #ff6600;
+  --green: #046434;
+  --blue: #1c1ca5;
+}
+
+#confetti {
+  height: 100vh;
+  left: 0px;
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  z-index: 0;
+}
+
+#balloon-container {
+  height: 100vh;
+  padding: 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  transition: opacity 500ms;
+ 
+}
+#indian-flag {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.balloon {
+  height: 125px;
+  width: 105px;
+  border-radius: 75% 75% 70% 70%;
+  position: relative;
+}
+
+.balloon:before {
+  content: "";
+  height: 75px;
+  width: 1px;
+  padding: 1px;
+  background-color: #fdfd96;
+  display: block;
+  position: absolute;
+  top: 125px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.balloon:after {
+  content: "▲";
+  text-align: center;
+  display: block;
+  position: absolute;
+  color: inherit;
+  top: 120px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-300vh);
+    opacity: 0;
+  }
+}
+
+
+.flag {
+  max-width: 350px;
+  width: 350px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  margin-top: 10vh;
+  position: relative;
+  z-index: 9;
+}
+
+.flag > * {
+  flex: 1;
+}
+
+.saffron {
+  background-color: var(--saffron);
+}
+
+.white {
+  background-color: white;
+  position: relative;
+}
+.green {
+  background-color: var(--green);
+}
+
+.wheel {
+  height: 100%;
+  width: 67px;
+  border-radius: 1in;
+  margin: 0 auto;
+  border: 2.2Q double var(--blue);
+  position: relative;
+  display: grid;
+  place-items: center;
+  animation: rotate 5s linear infinite forwards;
+}
+
+.spoke {
+  height: 50%;
+  width: 2.5px;
+  position: absolute;
+  top: 0;
+  clip-path: polygon(50% 0, 50% 0, 100% 70%, 50% 100%, 50% 100%, 0 70%);
+  transform-origin: bottom;
+  background-color: var(--blue);
+}
+
+h1 {
+  font-size: clamp(20px, 3vw, 2rem);
+  font-weight: 600;
+  font-family: cursive;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: clamp(1rem, 6vw, 2rem);
+  }
+}
+
+
+
+@media screen and (min-width: 601px) {
+  h1 {
+    font-size: clamp(2rem, 5vw, rem);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
